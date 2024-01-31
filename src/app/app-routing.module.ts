@@ -5,7 +5,6 @@ import { ProductComponent } from './pages/product/product.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/botas-jordan-hombre', pathMatch: 'full' },
   { path: 'product/:id', component: ProductComponent },
   { path: 'product/:id/:sede', component: ProductComponent },
   { path: 'cart/:id', component: CartComponent },
