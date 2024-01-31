@@ -9,6 +9,7 @@ import { MarketService } from '../services/market.service';
 })
 export class CartComponent implements OnInit {
 
+  public logo: string = '';
   public wsnumber: string = '';
   public idPedido: string = '';
   public pedido: any = {
@@ -44,6 +45,7 @@ export class CartComponent implements OnInit {
         .subscribe({
           next: (v) => {  
             this.pedido = v;
+            this.logo = v.negocio.logo;
             this.wsnumber = v.wsnumber;
           },
           error: (e) => { console.log(e); }

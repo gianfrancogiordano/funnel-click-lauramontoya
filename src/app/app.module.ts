@@ -12,6 +12,8 @@ import { FooterComponent } from './core/footer/footer.component';
 import { ProductComponent } from './pages/product/product.component';
 import { NoSanitizePipe } from './pipes/no-sanitize.pipe';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SliderProductImgComponent } from './core/slider-product-img/slider-product-img.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     FooterComponent,
     ProductComponent,
     NoSanitizePipe,
-    NotFoundComponent
+    NotFoundComponent,
+    SliderProductImgComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
+    SwiperModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule

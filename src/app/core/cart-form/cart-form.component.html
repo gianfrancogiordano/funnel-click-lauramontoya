@@ -3,49 +3,63 @@
 
     <div class="row mt-1">
         <div class="col-12">
-            <img class="img-fluid" src="assets/funnel-click-jordan/3.gif" alt="">
+            <img class="img-fluid" src="" alt="">
         </div>
     </div>
 
     <div class="row" [formGroup]="formClienteData">
-        <div class="col-12 mb-1 mt-3">
+        <div class="col-12 text-center mb-1 mt-3">
 
             <ng-container *ngIf="producto.variacion.length > 1">
-                <label *ngIf="producto.variacion[1].variaciones.length > 0">Selecciona {{ producto.variacion[1].name }}</label>
-                <div *ngIf="producto.variacion[1].variaciones.length > 0" class="col-12 col-md-6">
-                    <div class="btn-group btn-variantes" data-toggle="buttons">
-                        <label (click)="setImg(i)" *ngFor="let v2 of producto.variacion[1].variaciones; index as i" class="btn btn-secondary">
+                <label *ngIf="producto.variacion[1].variaciones.length > 0">Selecciona el {{ producto.variacion[1].name }}</label>
+                <div *ngIf="producto.variacion[1].variaciones.length > 0" class="m-2">
 
-                            <input  formControlName="variacion2"
-                                    type="radio"
-                                    value="{{ v2 }}"
-                                    name="variacion2"
-                                    autocomplete="off"> {{ v2 }}
+                    <div class="btn-group-vertical m-1"
+                         role="group"
+                         *ngFor="let v2 of producto.variacion[1].variaciones; index as i">
 
-                            <img class="img-fluid img-product" [src]="producto.images[i] | imagen:'productos'" alt="">
+                        <input type="radio"
+                               class="btn-check"
+                               formControlName="variacion2"
+                               name="variacion2"
+                               value="{{ v2 }}"
+                               id="variacion2-{{i}}"
+                               autocomplete="off">
 
+                        <label class="btn btn-outline-secondary" for="variacion2-{{i}}">
+                            <div class="container-label">
+                                <span>{{ v2 }}</span>
+                                <img class="img-fluid img-product" [src]="producto.images[i] | imagen:'productos'" alt="">
+                            </div>
                         </label>
+
                     </div>
+
                 </div>
             </ng-container>
 
         </div>
 
-        <div class="col-12 mb-5 mt-3">
+        <div class="col-12 text-center mb-5 mt-3">
 
             <ng-container *ngIf="producto.variacion.length > 0">
                 <label *ngIf="producto.variacion[0].variaciones.length > 0">Selecciona {{ producto.variacion[0].name }}</label>
-                <div *ngIf="producto.variacion[0].variaciones.length > 0" class="col-12 col-md-6">
-                    <div class="btn-group btn-variantes" data-toggle="buttons">
-                        <label *ngFor="let v1 of producto.variacion[0].variaciones" class="btn btn-secondary">
+                <div *ngIf="producto.variacion[0].variaciones.length > 0" class="mt-2">
 
-                            <input  formControlName="variacion1"
-                                    type="radio" value="{{ v1 }}"
-                                    name="variacion1"
-                                    autocomplete="off"> {{ v1 }}
+                        <div class="btn-group-vertical m-1" role="group" *ngFor="let v1 of producto.variacion[0].variaciones; index as i">
 
-                        </label>
-                    </div>
+                            <input type="radio"
+                                   class="btn-check"
+                                   formControlName="variacion1"
+                                   value="{{ v1 }}"
+                                   name="variacion1"
+                                   id="variacion1-{{i}}"
+                                   autocomplete="off">
+
+                            <label class="btn btn-outline-secondary" for="variacion1-{{i}}">{{ v1 }}</label>
+
+                        </div>
+
                 </div>
             </ng-container>
 
@@ -57,7 +71,7 @@
 
             <div class="row text-center mt-1 mb-3">
                 <div class="col-12">
-                    <img class="img-fluid" src="assets/funnel-click-jordan/5.png" alt="">
+                    <img class="img-fluid" src="assets/core-img/formulario.png" alt="">
                 </div>
             </div>
 
@@ -159,7 +173,7 @@
             <div class="d-grid">
 
                 <button *ngIf="!submitPedido" (click)="createPurchase()" type="button"
-                        class="btn btn-lg btn-success animate__animated animate__pulse animate__slow animate__infinite"> Confirmar Pedido</button>
+                        class="btn btn-lg btn-info animate__animated animate__pulse animate__slow animate__infinite"> Confirmar Pedido 🛍</button>
 
                 <button *ngIf="submitPedido" type="button" class="btn btn-block btn-warning waves-effect text-left"disabled>
                         <i class="fa fa-circle-o-notch fa-spin fa-fw"></i> Enviando pedido ...</button>

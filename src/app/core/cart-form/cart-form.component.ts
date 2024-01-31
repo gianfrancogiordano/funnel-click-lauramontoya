@@ -148,8 +148,6 @@ export class CartFormComponent implements OnInit {
           clientData: { email: datosCliente.email, codigo: datosCliente.codigo, telefono: `${datosCliente.telefono.trim().replace(/\s+/g, '')}`, domain: document.location.href, _fbp, _fbc, ip: this.marketService.clientIp }
         };
 
-        console.log('FbApi', action, allData);
-
         this.fbApiConv.sendFbApiEvent(allData).subscribe({
           next: (v) => { console.log('FbApi', action); },
           error: (e) => { console.log(e) }
