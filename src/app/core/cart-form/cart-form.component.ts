@@ -259,7 +259,8 @@ export class CartFormComponent implements OnInit {
       wsnumber: this.wsnumber,
       lbsedes: [],
       loadBalancer: false,
-      fbclid: this.checkFbClid()
+      fbclid: this.checkFbClid(),
+      funnel: true
     }
 
 
