@@ -104,7 +104,7 @@ export class CartFormComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  setImg(imgName: number) { this.variacionImg = imgName; }
+  setImg(imgIndex: number) { this.variacionImg = imgIndex; }
 
   campoNoValido(campo: string): boolean {
     return this.formClienteData.get(campo)!.invalid && this.submitPedidoValidator ? true : false;

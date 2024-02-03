@@ -16,6 +16,7 @@
 
                     <div class="btn-group-vertical m-1"
                          role="group"
+                         (click)="setImg(i)"
                          *ngFor="let v2 of producto.variacion[1].variaciones; index as i">
 
                         <input type="radio"
